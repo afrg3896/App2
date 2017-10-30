@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App2.Dato">
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry Text="{Binding Diagnostic}" x:Name="Diag" HorizontalOptions="FillAndExpand"></Entry>
+            <Button x:Name="Agregar" Text="Agregar" Clicked="Agregar_Clicked"></Button>
+
+            <ScrollView VerticalOptions="FillAndExpand">
+
+                <ListView x:Name="ListaD" ItemsSource="{Binding}" ItemSelected="ListaD_ItemSelected">
+
+                    <ListView.ItemTemplate>
+
+                        <DataTemplate>
+
+                            <ViewCell>
+
+                                <StackLayout Orientation="Horizontal">
+
+                                    <Label Text="{Binding Diagnosticos}" />
+
+                                </StackLayout>
+
+
+                            </ViewCell>
+
+
+                        </DataTemplate>
+
+                    </ListView.ItemTemplate>
+
+                </ListView>
+
+
+            </ScrollView>
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

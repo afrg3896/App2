@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage Padding ="20" xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App2"
+             x:Class="App2.MainPage">
+
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry x:Name="Nombre" Placeholder="Ingrese nombre completo"></Entry>
+            <Button x:Name="Ingresar" Text="Ingresar" Clicked="Button_Clicked"></Button>
+
+            <ScrollView VerticalOptions="FillAndExpand">
+
+                <ListView x:Name="ListaP" ItemsSource="{Binding}" ItemSelected="ListaP_ItemSelected">
+
+                    <ListView.ItemTemplate>
+
+                        <DataTemplate>
+
+                            <ViewCell>
+
+                                <StackLayout Orientation="Horizontal">
+
+                                    <Label Text="{Binding NombreC}" />
+                                    <Label Text="{Binding Diagnostic}" />
+
+                                </StackLayout>
+
+
+                            </ViewCell>
+                            
+                        </DataTemplate>
+
+                    </ListView.ItemTemplate>
+
+                </ListView>
+                
+                
+            </ScrollView>
+            
+            
+        </StackLayout>
+     
+    </ContentPage.Content>
+    
+</ContentPage>
